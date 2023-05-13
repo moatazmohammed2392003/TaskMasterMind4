@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="icon" href="images/tab-icon.png" />
+    <title>Sign-Up</title>
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-card">
+        <form action="">
+          <img src="images/tab-icon.png" alt="" class="img" />
+          <h1>Registration</h1>
+          <div class="name">
+            <input type="text" id="name" required />
+            <label for="name">enter your name</label>
+            <div class="name-warning">invalid input</div>
+          </div>
+          <div class="email">
+            <input type="email" id="email" required />
+            <label for="email">enter your email</label>
+            <div class="email-warning">invalid input</div>
+          </div>
+          <div class="pass">
+            <input type="password" id="pass" required />
+            <label for="pass">create password</label>
+            <div class="pass-warning">invalid input</div>
+          </div>
+          <div class="confirm">
+            <input type="password" id="con" required />
+            <label for="con">confirm password</label>
+            <div class="con-warning">invalid input</div>
+          </div>
+          <div class="reg-button">
+            <button id="btn" type="submit">Register Now</button>
+            <span class="txt"
+              >Already have an account? <a href="login.html">sign in</a></span
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

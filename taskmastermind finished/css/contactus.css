@@ -1,0 +1,154 @@
+* {
+   
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI';
+    height: 100vh;
+    background-color:aliceblue;
+    background-image: url(../images/wave.svg);
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+
+
+.content .content-txt h1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+}
+
+.content .content-txt span {
+    font-size: 18px;
+}
+
+.content .content-txt h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+.content .content-inputs {
+    flex-basis: 48%;
+}
+
+.content .content-inputs input {
+    height: 45px;
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    padding-left: 15px;
+    position: relative;
+    outline: none;
+    margin: 30px 15px;
+    font-size: 15px;
+}
+.email,.name{
+    position: relative;
+    display: inline;
+}
+ 
+label{
+    font-size:16px;
+    color: #afbdcf;
+    position: absolute;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+    top: 2px;
+    left: 30px
+
+  }
+  
+ input:focus + label, input:valid + label{
+    font-size: 12px;
+    color: #afbdcf;
+    top: -15px;
+    left:23px;
+    background: #ffffff;
+    padding: 0px 5px 0px 5px;
+}  
+
+
+
+.content .content-inputs textarea {
+    padding: 15px 20px;
+    margin: 0 15px;
+    outline: none;
+    font-size: 14px;
+    resize: none;
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+}
+
+.content .content-inputs button {
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    width: 150px;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #4772FA;
+    font-weight: bold;
+    border: none;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+@media (max-width: 500px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .content-inputs button {
+        margin-left: 0;
+    }
+    .content .content-inputs input,
+    .content .content-inputs textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+    .content .content-inputs input[type="text"] {
+        margin-bottom: 0px;
+    }
+}
+
+@media(min-width: 501px) and (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .content .content-inputs button {
+        margin-left: 0;
+    }
+    .content .content-inputs input,
+    .content .content-inputs textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+    .content .content-inputs input[type="text"] {
+        margin-bottom: 0px;
+    }
+}

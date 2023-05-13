@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="images/tab-icon.png" />
+    <title>Sign-In</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="card">
+        <form action="" name="login-form" onsubmit="return validateForm()">
+          <img src="images/tab-icon.png" alt="" class="img" />
+          <h1>Welcome</h1>
+          <div class="email-input">
+            <input
+              type="email"
+              id="email"
+              class="email"
+              required
+              name="email"
+            />
+            <label for="email">Email</label>
+            <div class="email-warning">invalid input</div>
+          </div>
+          <div class="password-input">
+            <input
+              type="password"
+              class="password"
+              id="pass"
+              required
+              minlength="6"
+            />
+            <label for="pass">Password</label>
+            <div class="pass-warning">
+              Password requires at least 6 characters.
+            </div>
+            <!-- <div class="rem-me-cb">
+              <input type="checkbox" name="rem-me" id="rem-me" />
+              <p>Remember Me</p>
+            </div> -->
+          </div>
+          <button class="btn2" type="submit" value="login">login</button>
+          <span class="txt"
+            >don't have an account? <a href="signup.html">sign up</a></span
+          >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

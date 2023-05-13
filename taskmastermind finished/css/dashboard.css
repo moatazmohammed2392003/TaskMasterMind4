@@ -1,0 +1,330 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    font-family: Segoe UI;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+img{
+    display: block;
+    width: 100%;
+}
+
+
+#container{
+        display: grid;
+        margin: 0 auto;
+        width: 96%;
+        grid-template-columns: 220px auto;
+        }
+
+        header {
+            padding: 20px;
+            position:sticky;
+            top: 0;
+            z-index: 2;
+            background-color:white;
+            border-bottom:#eee 3px solid ;
+            height: 60px;
+          }
+          header .container {
+            display: flex;
+            justify-content: space-between;
+          }
+        
+        
+          header img{
+            width: 120px;
+            position: absolute;
+          }
+          header .account{
+            position: absolute;
+            right: 30px;
+          }
+        
+
+main{
+        grid-column-start: 2;
+    }
+
+aside{
+    height: calc(100vh - 15px);
+    background-color: #FAFAFA;
+    position: fixed;
+    width: 220px;
+    left: 0;
+    z-index: 1;
+    box-shadow: 3px 0px 11px 1px rgba(227,227,227,1);
+}
+
+.sidebar{
+    height:86vh ;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 42px;
+    color: black;
+}
+.sidebar a{
+    display: flex;
+    gap: 14px;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.708);
+    font-size: 14px;
+}
+.sidebar .task-icon{
+    background-color: #eee;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.sidebar a.logout{
+    position: absolute;
+    bottom: 0;
+    width: 190px;
+}
+.sidebar a:hover span{
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    margin-left: 14px;
+
+}
+.sidebar a:hover{
+    background-color: #eee;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+button#menu-btn{
+    border: none;
+    background-color: transparent;
+    left: 195px;
+    position: absolute;
+}
+button#menu-btn:hover{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+
+   .maincontent{
+    padding: 50px 100px;
+   }  
+
+  
+   span#current-day{
+    font-size: 20px;
+     font-weight: bold;
+   }
+
+   .content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+   
+   .content h4{
+    border-bottom: #ddd 1px solid;
+    padding-bottom: 9px;
+    margin-bottom:20px ;
+   } 
+
+   /* add task buttton */
+   .addTask{
+    margin-top: 30px;
+}
+
+#addTaskBtn{
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 15px;
+    background-color: #4772FA;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+/* end add task button */
+
+
+   /* task and task box */
+   .task-box{ 
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: auto;
+   }
+   .task {
+    border-radius: 4px;
+    border-top: #ccc 1px solid;
+    border-bottom: #4772FA 3px solid;
+    padding: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+    user-select: none;
+}
+
+  .task-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .task-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .task .task-due-date{
+
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+  
+  #icon-editBtn{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    
+}
+#icon-deleteBtn{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+#icon-editBtn:hover,#icon-deleteBtn:hover{
+    background-color: #ddd;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+input[type="checkbox"] {
+    border: 0px;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    margin: 0px 5px 0px 0px;
+}
+ 
+  
+
+/* end task and task box */
+
+
+
+
+
+/*start modal*/
+.addTaskmodal,.editTaskmodal ,.viewTaskmodal{
+    display: none; 
+    position: fixed; 
+    z-index: 3; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  
+  /* Modal Content */
+  .add-modal-content ,.edit-modal-content,.view-modal-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #dedede;
+    width: 40%;
+    position: relative;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+    .add-modal-content .title ,.edit-modal-content .title,.view-modal-content .title{
+        margin-bottom: 15px;
+    }
+
+  .add-modal-content input[type="text"] ,.edit-modal-content input[type="text"],.view-modal-content input[type="text"]{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.add-modal-content textarea ,.edit-modal-content textarea ,.view-modal-content textarea{
+    resize: none;
+    width: 100%;
+  height: 150px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  outline: none;
+  }
+  .add-modal-content input[type="date"],.edit-modal-content input[type="date"] ,.view-modal-content input[type="date"] {
+    margin: 15px 0 15px 0; 
+cursor: pointer;
+padding: 5px;
+outline: none;
+border: 2px #ccc solid;
+ }
+
+  .add-modal-content button ,.edit-modal-content button ,.view-modal-content button{
+
+    border-radius: 8px;
+    background-color: #4772FA;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+  /*end modal*/
